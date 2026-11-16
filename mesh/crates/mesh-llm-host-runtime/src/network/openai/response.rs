@@ -1,6 +1,7 @@
 mod body_reader;
 mod cache_cost;
 mod cancellation;
+mod captured_responses;
 mod chat_stream;
 mod common;
 mod dispatch;
@@ -13,9 +14,11 @@ mod relay;
 mod routing;
 mod send;
 mod served_model_headers;
+mod shared_responses_stream;
 mod stream_translation;
 
 pub(super) use cache_cost::CacheCostObservation;
+pub(crate) use captured_responses::{CapturedResponsesOutcome, capture_responses_events};
 pub(crate) use common::{PeerCapsuleIdSink, ServedByNodeIdSink};
 pub(super) use common::{
     ResponseRetryPolicy, RouteAttemptLoggingContext, RouteAttemptResult,
